@@ -23,7 +23,7 @@ public class Program {
 
         System.out.println();
 
-        System.out.println("==== TEST 2: seller findByDepartment =====");
+        System.out.println("==== TEST 2: seller findByDepartment ====");
         Department department = new Department(1, null);
         List<Seller> list = sellerDao.findByDepartment(department);
         for (Seller obj : list) {
@@ -32,7 +32,7 @@ public class Program {
 
         System.out.println();
 
-        System.out.println("==== TEST 3: seller findAll =====");
+        System.out.println("==== TEST 3: seller findAll ====");
         list = sellerDao.findAll();
         for (Seller obj : list) {
             System.out.println(obj);
@@ -40,14 +40,14 @@ public class Program {
 
         System.out.println();
 
-        System.out.println("==== TEST 4: seller insert =====");
+        System.out.println("==== TEST 4: seller insert ====");
         Seller newSeller = new Seller(null, "Jake", "jake@gmail.com", new Date(), 3500.0, department);
         sellerDao.insert(newSeller);
         System.out.println("Inserted! New id = " + newSeller.getId());
 
         System.out.println();
 
-        System.out.println("==== TEST 5: seller update =====");
+        System.out.println("==== TEST 5: seller update ====");
         seller = sellerDao.findById(1);
         seller.setName("Jonas");
         sellerDao.update(seller);
@@ -55,7 +55,7 @@ public class Program {
 
         System.out.println();
 
-        System.out.println("==== TEST 6: seller delete =====");
+        System.out.println("==== TEST 6: seller delete ====");
         System.out.print("Enter id for delete test: ");
         int id = sc.nextInt();
         sellerDao.deleteById(id);
