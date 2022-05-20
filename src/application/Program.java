@@ -20,7 +20,7 @@ public class Program {
 
         System.out.println();
 
-        System.out.println("\n=== TEST 2: seller findByDepartment =====");
+        System.out.println("==== TEST 2: seller findByDepartment =====");
         Department department = new Department(1, null);
         List<Seller> list = sellerDao.findByDepartment(department);
         for (Seller obj : list) {
@@ -29,12 +29,17 @@ public class Program {
 
         System.out.println();
 
-        System.out.println("\n=== TEST 2: seller findAll =====");
+        System.out.println("==== TEST 3: seller findAll =====");
         list = sellerDao.findAll();
         for (Seller obj : list) {
             System.out.println(obj);
         }
 
-        System.out.println(seller);
+        System.out.println();
+
+        System.out.println("==== TEST 4: seller insert =====");
+        Seller newSeller = new Seller(null, "Jake", "jake@gmail.com", new Date(), 3500.0, department);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New id = " + newSeller.getId());
     }
 }
